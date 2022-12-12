@@ -1010,6 +1010,21 @@
                             { offset: 0x6D2060, off: [0x74], on: [0xEB] },
                         ]
                     },
+                    {
+                        name: "Omnimix",
+                        patches: [
+                            { offset: 0x893BC2, off: [0x0F, 0x84, 0xF8], on: [0x90, 0xE9, 0x48] },
+                            { offset: 0x893C18, off: [0x41], on: [0x58] },
+                            { offset: 0x897B75, off: [0x7F, 0x0A], on: [0x90, 0x90] },
+                            { offset: 0x897B7F, off: [0x7E], on: [0xEB] },
+                            { offset: 0xEF2E8F, off: [0x61], on: [0x6F] },
+                            { offset: 0xF97E5B, off: [0x64, 0x61, 0x74, 0x61], on: [0x6F, 0x6D, 0x6E, 0x69] },
+                            { offset: 0xEED3DA, off: [0x79, 0x6F, 0x6D, 0x69], on: [0x6F, 0x6D, 0x6E, 0x69] },
+                            { offset: 0xEED403, off: [0x79, 0x6F, 0x6D, 0x69], on: [0x6F, 0x6D, 0x6E, 0x69] },
+                            { offset: 0xFB4279, off: [0x6C, 0x69, 0x73, 0x74], on: [0x6F, 0x6D, 0x6E, 0x69] },
+                            { offset: 0x6C90FF, off: [0xE8, 0xAC, 0x9B, 0x06, 0x00], on: [0xB8, 0x01, 0x00, 0x00, 0x00] },
+                        ]
+                    },
                 ]),
             ]);
         });
@@ -1017,3 +1032,5 @@
   </head>
   <body>
     <h1>IIDX RESIDENT DLL Modder</h1>
+  </body>
+</html>
