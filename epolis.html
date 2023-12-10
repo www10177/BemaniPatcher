@@ -59,6 +59,12 @@
                             { offset: 0x87D727, off: [0x74, 0x03], on: [0x90, 0x90] },
                         ]
                     },
+                  {
+                        name: "Bypass Monitor Check Error",
+                        patches: [
+                            { offset: 0x773194, off: [0x0f, 0x85], on: [0x90, 0xE9] },
+                        ]
+                    },
                     {
                         type : "union",
                         name : "Choose Custom LDJ Timing/Adapter FPS",
