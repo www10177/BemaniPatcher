@@ -302,6 +302,14 @@
                       name: "Force TDJ Mode",
                       patches: [{ offset: 0x8840E2, off: [0x02], on: [0x03] }],
                   },
+                                   {
+                        name: "启用 ARENA",
+                        patches: [{ offset: 0x72F9AF, off: [0x75, 0x41], on: [0x90, 0x90] }],
+                    },
+                    {
+                        name: "启用 BPL BATTLE",
+                        patches: [{ offset: 0x72F9D4, off: [0x74, 0x1C], on: [0x90, 0x90] }],
+                    },
               ]),
               ]);
         });
