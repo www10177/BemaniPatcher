@@ -96,7 +96,7 @@
         "description": "加快显示器检测速度。如使用 60FPS 请勾选, 否则就算没问题也会 MONITOR ERROR",
         "gameCode": "ldj",
         "name": "快速显示器检测 (禁用重试)",
-        "preset": true,
+        "preset": false,
         "type": "memory",
         "patches": [
             {
@@ -154,7 +154,7 @@
         "description": "推荐使用 Windows 自带声卡驱动并且在 spice2x 内启用 -sp2x-lowlatencysharedaudio",
         "gameCode": "ldj",
         "name": "启用 WASAPI 共享模式",
-        "preset": true,
+        "preset": false,
         "type": "memory",
         "patches": [
             {
@@ -170,7 +170,7 @@
         "description": "忽略游戏内音量设置转而使用最大音量, 适用于声音很轻的情况。当你想要使用 TDJ 自带的耳机音量调节时请勿开启。",
         "gameCode": "ldj",
         "name": "最大游戏音量",
-        "preset": true,
+        "preset": false,
         "type": "memory",
         "patches": [
             {
@@ -281,7 +281,7 @@
         "dateCode": 20240507,
         "description": "",
         "gameCode": "ldj",
-        "name": "歌曲全解",
+        "name": "歌曲全解(May Conflict with Omni)",
         "preset": true,
         "type": "memory",
         "patches": [
@@ -289,6 +289,34 @@
                 "dataDisabled": "32C0",
                 "dataEnabled": "B001",
                 "dataOffset": 8425514,
+                "dllName": "bm2dx.dll"
+            }
+        ]
+    },
+    {
+        "dateCode": 20240507,
+        "description": "",
+        "gameCode": "ldj",
+        "name": "Omnimix Unofficial",
+        "preset": true,
+        "type": "memory",
+        "patches": [
+            {
+                "dataDisabled": "64617461",
+                "dataEnabled": "6F6D6E69",
+                "dataOffset": 13346499,
+                "dllName": "bm2dx.dll"
+            },
+            {
+                "dataDisabled": "61",
+                "dataEnabled": "6F",
+                "dataOffset": 12590743,
+                "dllName": "bm2dx.dll"
+            },
+            {
+                "dataDisabled": "7F19",
+                "dataEnabled": "9090",
+                "dataOffset": 9211574,
                 "dllName": "bm2dx.dll"
             }
         ]
