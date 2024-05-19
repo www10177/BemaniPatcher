@@ -1,1 +1,296 @@
-[{"dateCode":20240507,"description":"","gameCode":"ldj","name":"启用 LDJ 模式","preset":true,"type":"memory","patches":[{"dataDisabled":"03","dataEnabled":"02","dataOffset":10151095,"dllName":"bm2dx.dll"}]},{"dateCode":20240507,"description":"","gameCode":"ldj","name":"在 LDJ 模式下使用自定义帧数","preset":true,"type":"memory","patches":[{"dataDisabled":"75","dataEnabled":"EB","dataOffset":7903667,"dllName":"bm2dx.dll"},{"dataDisabled":"7403","dataEnabled":"9090","dataOffset":10150919,"dllName":"bm2dx.dll"}]},{"name":"选择自定义的帧数","description":"如高刷显示器不支持 120Hz, 请使用 CRU 或 NVIDIA 控制面板增加一个自定义的 120Hz 的分辨率, 通常来说这些高刷显示器支持 120Hz 是完全没有问题的。","gameCode":"ldj","dateCode":20240507,"type":"union","patches":[{"name":"60 FPS","type":"union","patch":{"dllName":"bm2dx.dll","data":"C745DB3C000000C745FF01000000488B45D748894503C745D701000000C745DB3C000000","offset":10150385}},{"name":"120 FPS","type":"union","patch":{"dllName":"bm2dx.dll","data":"C745DB78000000C745FF01000000488B45D748894503C745D701000000C745DB78000000","offset":10150385}}]},{"name":"选择显示器检测目标 FPS","description":"如高刷显示器不支持 120Hz, 请使用 CRU 或 NVIDIA 控制面板增加一个自定义的 120Hz 的分辨率, 通常来说这些高刷显示器支持 120Hz 是完全没有问题的。","gameCode":"ldj","dateCode":20240507,"type":"union","patches":[{"name":"60 FPS","type":"union","patch":{"dllName":"bm2dx.dll","data":"3C00","offset":9103414}},{"name":"120 FPS","type":"union","patch":{"dllName":"bm2dx.dll","data":"7800","offset":9103414}}]},{"dateCode":20240507,"description":"加快显示器检测速度。如使用 60FPS 请勾选, 否则就算没问题也会 MONITOR ERROR","gameCode":"ldj","name":"快速显示器检测 (禁用重试)","preset":true,"type":"memory","patches":[{"dataDisabled":"0F8CA6000000","dataEnabled":"E9A700000090","dataOffset":9072049,"dllName":"bm2dx.dll"},{"dataDisabled":"7D","dataEnabled":"EB","dataOffset":9072297,"dllName":"bm2dx.dll"}]},{"name":"选择音频输出模式","description":"游戏不吃 SOUND_OUTPUT_DEVICE 环境变量了, spice 也拿他没办法","gameCode":"ldj","dateCode":20240507,"type":"union","patches":[{"name":"不修改","type":"union","patch":{"dllName":"bm2dx.dll","data":"E8C8D7ECFF83780803","offset":10357427}},{"name":"WASAPI","type":"union","patch":{"dllName":"bm2dx.dll","data":"BB00000000EB169090","offset":10357427}},{"name":"ASIO","type":"union","patch":{"dllName":"bm2dx.dll","data":"BB01000000EB169090","offset":10357427}}]},{"dateCode":20240507,"description":"推荐使用 Windows 自带声卡驱动并且在 spice2x 内启用 -sp2x-lowlatencysharedaudio","gameCode":"ldj","name":"启用 WASAPI 共享模式","preset":true,"type":"memory","patches":[{"dataDisabled":"448BF2","dataEnabled":"4D31F6","dataOffset":4646331,"dllName":"bm2dx.dll"}]},{"dateCode":20240507,"description":"忽略游戏内音量设置转而使用最大音量, 适用于声音很轻的情况。当你想要使用 TDJ 自带的耳机音量调节时请勿开启。","gameCode":"ldj","name":"最大游戏音量","preset":true,"type":"memory","patches":[{"dataDisabled":"FF909800000090","dataEnabled":"90909090909090","dataOffset":10289029,"dllName":"bm2dx.dll"}]},{"dateCode":20240507,"description":"","gameCode":"ldj","name":"PF 倒计时冻结","preset":true,"type":"memory","patches":[{"dataDisabled":"7E","dataEnabled":"EB","dataOffset":8450781,"dllName":"bm2dx.dll"}]},{"dateCode":20240507,"description":"倒计时变正计时","gameCode":"ldj","name":"菜单倒计时倒涨","preset":true,"type":"memory","patches":[{"dataDisabled":"8B","dataEnabled":"83","dataOffset":9298094,"dllName":"bm2dx.dll"}]},{"dateCode":20240507,"description":"","gameCode":"ldj","name":"选曲游标锁定","preset":true,"type":"memory","patches":[{"dataDisabled":"7422","dataEnabled":"9090","dataOffset":8806669,"dllName":"bm2dx.dll"}]},{"dateCode":20240507,"description":"","gameCode":"ldj","name":"开始时按住 START 一直暂停歌曲","preset":true,"type":"memory","patches":[{"dataDisabled":"7D36","dataEnabled":"9090","dataOffset":8943239,"dllName":"bm2dx.dll"}]},{"dateCode":20240507,"description":"缩短 'STAGE FAILED' 动画的长度.","gameCode":"ldj","name":"更快的快速重试","preset":true,"type":"memory","patches":[{"dataDisabled":"7C12","dataEnabled":"9090","dataOffset":8940229,"dllName":"bm2dx.dll"}]},{"dateCode":20240507,"description":"可无限玩黑谱","gameCode":"ldj","name":"游玩黑谱不消耗 V-Disc","preset":true,"type":"memory","patches":[{"dataDisabled":"4D85C0","dataEnabled":"C39090","dataOffset":5822080,"dllName":"bm2dx.dll"}]},{"dateCode":20240507,"description":"","gameCode":"ldj","name":"歌曲全解","preset":true,"type":"memory","patches":[{"dataDisabled":"32C0","dataEnabled":"B001","dataOffset":8425514,"dllName":"bm2dx.dll"}]}]
+[
+    {
+        "dateCode": 20240507,
+        "description": "",
+        "gameCode": "ldj",
+        "name": "启用 LDJ 模式",
+        "preset": true,
+        "type": "memory",
+        "patches": [
+            {
+                "dataDisabled": "03",
+                "dataEnabled": "02",
+                "dataOffset": 10151095,
+                "dllName": "bm2dx.dll"
+            }
+        ]
+    },
+    {
+        "dateCode": 20240507,
+        "description": "",
+        "gameCode": "ldj",
+        "name": "在 LDJ 模式下使用自定义帧数",
+        "preset": true,
+        "type": "memory",
+        "patches": [
+            {
+                "dataDisabled": "75",
+                "dataEnabled": "EB",
+                "dataOffset": 7903667,
+                "dllName": "bm2dx.dll"
+            },
+            {
+                "dataDisabled": "7403",
+                "dataEnabled": "9090",
+                "dataOffset": 10150919,
+                "dllName": "bm2dx.dll"
+            }
+        ]
+    },
+    {
+        "name": "选择自定义的帧数",
+        "description": "如高刷显示器不支持 120Hz, 请使用 CRU 或 NVIDIA 控制面板增加一个自定义的 120Hz 的分辨率, 通常来说这些高刷显示器支持 120Hz 是完全没有问题的。",
+        "gameCode": "ldj",
+        "dateCode": 20240507,
+        "type": "union",
+        "patches": [
+            {
+                "name": "60 FPS",
+                "type": "union",
+                "patch": {
+                    "dllName": "bm2dx.dll",
+                    "data": "C745DB3C000000C745FF01000000488B45D748894503C745D701000000C745DB3C000000",
+                    "offset": 10150385
+                }
+            },
+            {
+                "name": "120 FPS",
+                "type": "union",
+                "patch": {
+                    "dllName": "bm2dx.dll",
+                    "data": "C745DB78000000C745FF01000000488B45D748894503C745D701000000C745DB78000000",
+                    "offset": 10150385
+                }
+            }
+        ]
+    },
+    {
+        "name": "选择显示器检测目标 FPS",
+        "description": "如高刷显示器不支持 120Hz, 请使用 CRU 或 NVIDIA 控制面板增加一个自定义的 120Hz 的分辨率, 通常来说这些高刷显示器支持 120Hz 是完全没有问题的。",
+        "gameCode": "ldj",
+        "dateCode": 20240507,
+        "type": "union",
+        "patches": [
+            {
+                "name": "60 FPS",
+                "type": "union",
+                "patch": {
+                    "dllName": "bm2dx.dll",
+                    "data": "3C00",
+                    "offset": 9103414
+                }
+            },
+            {
+                "name": "120 FPS",
+                "type": "union",
+                "patch": {
+                    "dllName": "bm2dx.dll",
+                    "data": "7800",
+                    "offset": 9103414
+                }
+            }
+        ]
+    },
+    {
+        "dateCode": 20240507,
+        "description": "加快显示器检测速度。如使用 60FPS 请勾选, 否则就算没问题也会 MONITOR ERROR",
+        "gameCode": "ldj",
+        "name": "快速显示器检测 (禁用重试)",
+        "preset": true,
+        "type": "memory",
+        "patches": [
+            {
+                "dataDisabled": "0F8CA6000000",
+                "dataEnabled": "E9A700000090",
+                "dataOffset": 9072049,
+                "dllName": "bm2dx.dll"
+            },
+            {
+                "dataDisabled": "7D",
+                "dataEnabled": "EB",
+                "dataOffset": 9072297,
+                "dllName": "bm2dx.dll"
+            }
+        ]
+    },
+    {
+        "name": "选择音频输出模式",
+        "description": "游戏不吃 SOUND_OUTPUT_DEVICE 环境变量了, spice 也拿他没办法",
+        "gameCode": "ldj",
+        "dateCode": 20240507,
+        "type": "union",
+        "patches": [
+            {
+                "name": "不修改",
+                "type": "union",
+                "patch": {
+                    "dllName": "bm2dx.dll",
+                    "data": "E8C8D7ECFF83780803",
+                    "offset": 10357427
+                }
+            },
+            {
+                "name": "WASAPI",
+                "type": "union",
+                "patch": {
+                    "dllName": "bm2dx.dll",
+                    "data": "BB00000000EB169090",
+                    "offset": 10357427
+                }
+            },
+            {
+                "name": "ASIO",
+                "type": "union",
+                "patch": {
+                    "dllName": "bm2dx.dll",
+                    "data": "BB01000000EB169090",
+                    "offset": 10357427
+                }
+            }
+        ]
+    },
+    {
+        "dateCode": 20240507,
+        "description": "推荐使用 Windows 自带声卡驱动并且在 spice2x 内启用 -sp2x-lowlatencysharedaudio",
+        "gameCode": "ldj",
+        "name": "启用 WASAPI 共享模式",
+        "preset": true,
+        "type": "memory",
+        "patches": [
+            {
+                "dataDisabled": "448BF2",
+                "dataEnabled": "4D31F6",
+                "dataOffset": 4646331,
+                "dllName": "bm2dx.dll"
+            }
+        ]
+    },
+    {
+        "dateCode": 20240507,
+        "description": "忽略游戏内音量设置转而使用最大音量, 适用于声音很轻的情况。当你想要使用 TDJ 自带的耳机音量调节时请勿开启。",
+        "gameCode": "ldj",
+        "name": "最大游戏音量",
+        "preset": true,
+        "type": "memory",
+        "patches": [
+            {
+                "dataDisabled": "FF909800000090",
+                "dataEnabled": "90909090909090",
+                "dataOffset": 10289029,
+                "dllName": "bm2dx.dll"
+            }
+        ]
+    },
+    {
+        "dateCode": 20240507,
+        "description": "",
+        "gameCode": "ldj",
+        "name": "PF 倒计时冻结",
+        "preset": true,
+        "type": "memory",
+        "patches": [
+            {
+                "dataDisabled": "7E",
+                "dataEnabled": "EB",
+                "dataOffset": 8450781,
+                "dllName": "bm2dx.dll"
+            }
+        ]
+    },
+    {
+        "dateCode": 20240507,
+        "description": "倒计时变正计时",
+        "gameCode": "ldj",
+        "name": "菜单倒计时倒涨",
+        "preset": true,
+        "type": "memory",
+        "patches": [
+            {
+                "dataDisabled": "8B",
+                "dataEnabled": "83",
+                "dataOffset": 9298094,
+                "dllName": "bm2dx.dll"
+            }
+        ]
+    },
+    {
+        "dateCode": 20240507,
+        "description": "",
+        "gameCode": "ldj",
+        "name": "选曲游标锁定",
+        "preset": true,
+        "type": "memory",
+        "patches": [
+            {
+                "dataDisabled": "7422",
+                "dataEnabled": "9090",
+                "dataOffset": 8806669,
+                "dllName": "bm2dx.dll"
+            }
+        ]
+    },
+    {
+        "dateCode": 20240507,
+        "description": "",
+        "gameCode": "ldj",
+        "name": "开始时按住 START 一直暂停歌曲",
+        "preset": true,
+        "type": "memory",
+        "patches": [
+            {
+                "dataDisabled": "7D36",
+                "dataEnabled": "9090",
+                "dataOffset": 8943239,
+                "dllName": "bm2dx.dll"
+            }
+        ]
+    },
+    {
+        "dateCode": 20240507,
+        "description": "缩短 'STAGE FAILED' 动画的长度.",
+        "gameCode": "ldj",
+        "name": "更快的快速重试",
+        "preset": true,
+        "type": "memory",
+        "patches": [
+            {
+                "dataDisabled": "7C12",
+                "dataEnabled": "9090",
+                "dataOffset": 8940229,
+                "dllName": "bm2dx.dll"
+            }
+        ]
+    },
+    {
+        "dateCode": 20240507,
+        "description": "可无限玩黑谱",
+        "gameCode": "ldj",
+        "name": "游玩黑谱不消耗 V-Disc",
+        "preset": true,
+        "type": "memory",
+        "patches": [
+            {
+                "dataDisabled": "4D85C0",
+                "dataEnabled": "C39090",
+                "dataOffset": 5822080,
+                "dllName": "bm2dx.dll"
+            }
+        ]
+    },
+    {
+        "dateCode": 20240507,
+        "description": "",
+        "gameCode": "ldj",
+        "name": "歌曲全解",
+        "preset": true,
+        "type": "memory",
+        "patches": [
+            {
+                "dataDisabled": "32C0",
+                "dataEnabled": "B001",
+                "dataOffset": 8425514,
+                "dllName": "bm2dx.dll"
+            }
+        ]
+    }
+]
